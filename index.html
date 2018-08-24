@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Browser Mockup</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="browser">
+        <div class="left"><img src="left.png" alt=""></div>
+        <div class="right"><img src="right.png" alt=""></div>
+        <ul>
+            <li>
+                <div class="siteurl"><span>https://</span>github.com/berat</div>
+                <div class="image"><img src="slide1.png" alt=""></div>
+                <div class="text">
+                    <a href="https://github.com/Berat">@Berat</a>
+                    <p>Github Profile</p>
+                </div>
+            </li>
+            <li>
+                <div class="siteurl"><span>https://</span>twitter.com/oberatlee</div>
+                <div class="image"><img src="slide2.png" alt=""></div>
+                <div class="text">
+                    <a href="https://twitter.com/oberatlee">@oberatlee</a>
+                    <p>Twitter Profile</p>
+                </div>
+            </li>
+            <li>
+                <div class="siteurl"><span>https://</span>instagram.com/oberatlee</div>
+                <div class="image"><img src="slide3.png" alt=""></div>
+                <div class="text">
+                    <a href="https://instagram.com/oberatlee">@oberatlee</a>
+                    <p>İnstagram Profile</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($){
+
+var uzunluk=1;
+uzunluk++;
+var sira=0;
+
+$('.browser ul li:not(:eq('+sira+'))').hide();
+$('.right').click(function(event){
+    $('.browser ul li').fadeOut();
+    if (sira<uzunluk) {
+        sira++;
+        $('.browser ul li:eq('+sira +')').fadeIn();
+    }
+    else {
+        sira=0;
+        $('.browser ul li:eq('+sira +')').fadeIn();
+    };
+});
+
+$('.left').click(function(event){
+    $('.browser ul li').fadeOut();
+    if (sira>0) {
+        sira--;
+        $('.browser ul li:eq('+sira +')').fadeIn();
+    }
+    else{
+        sira=uzunluk;
+        $('.slider ul li:eq('+sira +')').fadeIn();
+    }
+})
+
+});
+</script>
+</body>
+</html>
